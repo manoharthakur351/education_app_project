@@ -1,0 +1,45 @@
+<MainNavigator>:
+	ActivityManager:
+		HomeActivity:
+			MDBoxLayout:
+				orientation:'vertical'
+				
+				MDToolbar:
+					left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+				MDBoxLayout:
+					orientation:'vertical'
+					Scroll:
+						id:scroll
+						ListView:
+							spacing:100
+							TextWaliTile:
+							
+							MDLabel:
+								id: sortFilesDisplay
+								markup:True
+								font_style:'Body2'
+								size_hint_y: None
+								size: self.texture_size
+								text: "[color=#448aff][ref='slien'][i] https://www.google.com/[/i] [/ref][/color]\n\n"* 2
+								on_ref_press:
+									app.webit()
+							
+								
+								
+								
+							
+								
+				
+	MDNavigationDrawer:
+		id:nav_drawer
+
+<TextWaliTile>:
+	tile_text_color:(0,0,0,1)
+	box_color:(0,0,0,0)
+	size_hint_y: None
+	height: "340dp"
+	text: "[size=70]Other[/size]\n[size=35]Some important links you can learn from.[/size]"
+	source:'imgs/laptop.png'
+	maintain_ratio:True
+	on_press:
+		app.toastit()
